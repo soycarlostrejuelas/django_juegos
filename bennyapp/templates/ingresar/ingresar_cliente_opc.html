@@ -1,0 +1,26 @@
+{% extends 'padre.html'%}
+
+{% block content%}
+<figure style="text-align: center;">
+    <br>
+    <br>
+    <br>
+    <h1>INGRESAR CLIENTE</h1>
+    <form action="/ingresar_cliente/" method="POST">{% csrf_token %}
+        <input type="text" name="nombre" class="form-control" placeholder="Nombre" required>
+        <br>
+        <input type="number" name="telefono" class="form-control" placeholder="Telefono" required>
+        <br>
+        <input type="number" name="edad" class=" form-control" placeholder="Edad" required>
+        <br>
+        <input type="text" name="direccion" class="form-control" placeholder="Direccion" required>
+        <br>
+        <input type="text" name="F_N" class="form-control" placeholder="Fecha de nacimiento" required>
+        <br>
+        <h1>
+            <input type="submit" value="Guardar">
+        </h1>
+</figure>
+
+
+{% endblock %}

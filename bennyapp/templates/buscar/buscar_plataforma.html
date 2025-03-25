@@ -1,0 +1,22 @@
+{% extends 'padre.html'%}
+
+{% block content%}
+    <figure style="text-align: center;">
+        <h1>Buscar Plataforma</h1>
+    
+        <form method="get">
+            {{ form.as_p }}
+            <input type="submit" value="Buscar">
+        </form>
+        {% if plataforma%}
+            <ul>
+                {%for i in plataforma%}
+                <li>{{i.nombre}} / <a href="/eliminar_confirmar_plataforma/{{i.id}}/">eliminar</a></li>
+                {%endfor%}
+            </ul>
+        {%else%}
+        <br>
+            <p>no hay nada</p>
+        {%endif%}
+    </figure>
+{%endblock%}

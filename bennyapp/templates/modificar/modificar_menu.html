@@ -1,0 +1,62 @@
+{% extends 'padre.html'%}
+
+{% block content%}
+
+<div class="card">
+    <H2 style="text-align: center;">CLIENTES</H2>
+    <div class="card-body">
+        <form action="/editar_envio_cliente/" method="POST">{% csrf_token %}
+            <div class="form-group">
+                <select name="cliente" id="cliente" class="form-control" required>
+                    <option value="" disabled selected>Seleccione un cliente</option>
+                    {% for a in clientes%}
+                        <option value="{{ a.id }}">{{ a.nombre }}</option>
+                    {% endfor %}
+                    <input type="submit" value="GUARDAR">
+                </select>
+            </div>
+        </form>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<div class="card">
+    <H2 style="text-align: center;">JUEGOS</H2>
+    <div class="card-body">
+        <form action="/editar_envio_juego/" method="POST">{% csrf_token %}
+            <div class="form-group">
+                <select name="juego" id="juego" class="form-control" required>
+                    <option value="" disabled selected>Seleccione un juego</option>
+                    {% for a in juegos%}
+                        <option value="{{ a.id }}">{{ a.nombre }}</option>
+                    {% endfor %}
+                    <input type="submit" value="GUARDAR">
+                </select>
+            </div>
+        </form>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<div class="card">
+    <H2 style="text-align: center;">PLATAFORMA</H2>
+    <div class="card-body">
+        <form action="/editar_envio_plataforma/" method="POST">{% csrf_token %}
+            <div class="form-group">
+                <select name="plataforma" id="plataforma" class="form-control" required>
+                    <option value="" disabled selected>Seleccione una plataforma</option>
+                    {% for a in plataforma%}
+                        <option value="{{ a.id }}">{{ a.nombre }}</option>
+                    {% endfor %}
+                    <input type="submit" value="GUARDAR">
+                </select>
+            </div>
+        </form>
+    </div>
+</div>
+<br>
+<br>
+<br>
+{%endblock%}

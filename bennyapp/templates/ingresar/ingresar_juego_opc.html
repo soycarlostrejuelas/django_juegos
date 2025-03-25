@@ -1,0 +1,25 @@
+{% extends 'padre.html'%}
+
+{% block content%}
+<figure style="text-align: center;">
+    <br>
+    <br>
+    <br>
+    <h1>INGRESAR JUEGO</h1>
+    <form action="/ingresar_juego/" method="POST">{% csrf_token %}
+        <input type="text" name="nombre" class="form-control" placeholder="Nombre" required>
+        <br>
+        <select name="plataforma" id="plataforma" class="form-control" required>
+            <option value="" disabled selected>Selecciona una plataforma</option>
+            {%for i in plataforma%}
+                <option value="{{i.id}}" >{{i.nombre}}</option>
+            {%endfor%}
+        </select>
+        <br>
+        <h1>
+            <input type="submit" value="Guardar">
+        </h1>
+</figure>
+
+
+{% endblock %}

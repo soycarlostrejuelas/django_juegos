@@ -1,0 +1,18 @@
+{% extends 'padre.html'%}
+
+{% block content%}
+    <figure style="text-align: center;">
+        <h1>Estas seguro que quieres eliminar a {{aaa.nombre}}?</h1>
+        <br>
+        <form method="post" action="/eliminar_plataforma/{{aaa.id}}/">
+            {% csrf_token %}
+            <button type="submit">SI</button>
+        </form>
+        <form method="get" action="/buscar_plataformas/">
+            <button type="submit">NO</button>
+        </form>
+        <br>
+        <br>
+        <img src="https://media.tenor.com/JXRh3PBLwdAAAAAe/omg-sorprendido-meme.png" alt="">
+    </figure>
+{%endblock%}

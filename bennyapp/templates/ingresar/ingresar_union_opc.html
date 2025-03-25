@@ -1,0 +1,30 @@
+{% extends 'padre.html'%}
+
+{% block content%}
+<figure style="text-align: center;">
+    <br>
+    <br>
+    <br>
+    <h1>INGRESAR UNION</h1>
+    <form action="/ingresar_union/" method="POST">{% csrf_token %}
+        <select name="cliente" id="cliente" class="form-control" required>
+            <option value="" disabled selected>Selecciona un cliente</option>
+            {%for i in clientes%}
+                <option value="{{i.id}}" >{{i.nombre}}</option>
+            {%endfor%}
+        </select>
+        <br>
+        <select name="juego" id="juego" class="form-control" required>
+            <option value="" disabled selected>Selecciona un juego</option>
+            {%for i in juegos%}
+                <option value="{{i.id}}" >{{i.nombre}}</option>
+            {%endfor%}
+        </select>
+        <br>
+        <h1>
+            <input type="submit" value="Guardar">
+        </h1>
+</figure>
+
+
+{% endblock %}

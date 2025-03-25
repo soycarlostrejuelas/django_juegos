@@ -1,0 +1,14 @@
+{% extends 'padre.html'%}
+
+{% block content%}
+<figure style="text-align: center;">
+    <h1>
+        MODIFICAR JUEGO {{juego.nombre}}
+    </h1>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit"> GUARDAR CAMBIOS</button>
+    </form>
+</figure>
+{%endblock%}
